@@ -52,7 +52,7 @@ case $choice in
         cd
         
         # --- 4. Download hyper_bot.py ---
-        BOT_URL="https://raw.githubusercontent.com/noxuspace/cryptofortochka/main/hyperbolic/hyper_bot.py"
+        BOT_URL="https://raw.githubusercontent.com/smartcall1/hyperbolic/refs/heads/main/hyper_bot.py"
         curl -fsSL -o hyperbolic/hyper_bot.py "$BOT_URL"
 
         # --- 5. Request API key and insert it into hyper_bot.py ---
