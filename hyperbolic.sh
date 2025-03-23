@@ -61,7 +61,7 @@ case $choice in
         sed -i "s/HYPERBOLIC_API_KEY = \"\$API_KEY\"/HYPERBOLIC_API_KEY = \"$USER_API_KEY\"/" "$PROJECT_DIR/hyper_bot.py"
         
         # --- 6. questions.txt 다운로드 ---
-        QUESTIONS_URL="https://raw.githubusercontent.com/noxuspace/cryptofortochka/main/hyperbolic/questions.txt"
+        QUESTIONS_URL="https://raw.githubusercontent.com/smartcall1/hyperbolic/refs/heads/main/question.txt"
         curl -fsSL -o hyperbolic/questions.txt "$QUESTIONS_URL"
 
         # --- 7. systemd 서비스 생성 ---
