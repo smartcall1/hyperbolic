@@ -16,8 +16,8 @@ if ! command -v curl &> /dev/null; then
 fi
 sleep 1
 
-# 로고 표시
-curl -s https://raw.githubusercontent.com/noxuspace/cryptofortochka/main/logo_club.sh | bash
+# 로고 표시 (주석 처리)
+# curl -s https://raw.githubusercontent.com/noxuspace/cryptofortochka/main/logo_club.sh | bash
 
 # 메뉴
 echo -e "${YELLOW}원하는 작업을 선택하세요:${NC}"
@@ -55,12 +55,12 @@ case $choice in
         BOT_URL="https://raw.githubusercontent.com/smartcall1/hyperbolic/refs/heads/main/hyper_bot.py"
         curl -fsSL -o hyperbolic/hyper_bot.py "$BOT_URL"
 
-        # --- 5. API 키 입력 ---
+        # --- 5. API 키 입력 (파일 변경 없음) ---
         echo -e "${YELLOW}Hyperbolic API 키를 입력하세요:${NC}"
         read USER_API_KEY
-        sed -i "s/HYPERBOLIC_API_KEY = \"\$API_KEY\"/HYPERBOLIC_API_KEY = \"$USER_API_KEY\"/" "$PROJECT_DIR/hyper_bot.py"
+        # sed -i "s/HYPERBOLIC_API_KEY = \"\$API_KEY\"/HYPERBOLIC_API_KEY = \"$USER_API_KEY\"/" "$PROJECT_DIR/hyper_bot.py"
         
-        # --- 6. questions.txt 다운로드 ---
+        # --- 6. questions.txt 다운로드  ---
         QUESTIONS_URL="https://raw.githubusercontent.com/smartcall1/hyperbolic/refs/heads/main/question.txt"
         curl -fsSL -o hyperbolic/questions.txt "$QUESTIONS_URL"
 
@@ -94,9 +94,6 @@ EOT"
         echo -e "${PURPLE}-----------------------------------------------------------------------${NC}"
         echo -e "${YELLOW}로그를 확인하는 명령어:${NC}"
         echo "sudo journalctl -u hyper-bot.service -f"
-        # echo -e "${PURPLE}-----------------------------------------------------------------------${NC}"
-        # echo -e "${GREEN}CRYPTO FORTOCHKA — 모든 암호화폐 정보를 한곳에서!${NC}"
-        # echo -e "${CYAN}텔레그램 채널: https://t.me/cryptoforto${NC}"
         sleep 2
         sudo journalctl -u hyper-bot.service -f
         ;;
@@ -109,13 +106,13 @@ EOT"
 
     3)
         echo -e "${BLUE}로그를 확인하는 중...${NC}"
-        sudo journalctl -u hyper-bot.service -f
+        # sudo journalctl -u hyper-bot.service -f (주석 처리)
         ;;
 
     4)
         echo -e "${BLUE}봇을 재시작하는 중...${NC}"
         sudo systemctl restart hyper-bot.service
-        sudo journalctl -u hyper-bot.service -f
+        # sudo journalctl -u hyper-bot.service -f (주석 처리)
         ;;
         
     5)
@@ -132,7 +129,7 @@ EOT"
         rm -rf $HOME_DIR/hyperbolic
 
         echo -e "${GREEN}봇이 성공적으로 삭제되었습니다.${NC}"
-        # 최종 메시지
+        # 최종 메시지 (주석 처리)
         # echo -e "${PURPLE}-----------------------------------------------------------------------${NC}"
         # echo -e "${GREEN}CRYPTO FORTOCHKA — 모든 암호화폐 정보를 한곳에서!${NC}"
         # echo -e "${CYAN}텔레그램 채널: https://t.me/cryptoforto${NC}"
