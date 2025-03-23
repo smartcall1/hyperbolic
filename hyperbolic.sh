@@ -58,7 +58,7 @@ case $choice in
         # --- 5. API 키 입력 (파일 변경 없음) ---
         echo -e "${YELLOW}Hyperbolic API 키를 입력하세요:${NC}"
         read USER_API_KEY
-        # sed -i "s/HYPERBOLIC_API_KEY = \"\$API_KEY\"/HYPERBOLIC_API_KEY = \"$USER_API_KEY\"/" "$PROJECT_DIR/hyper_bot.py"
+        sed -i "s/HYPERBOLIC_API_KEY = \"\$API_KEY\"/HYPERBOLIC_API_KEY = \"$USER_API_KEY\"/" "$PROJECT_DIR/hyper_bot.py"
         
         # --- 6. questions.txt 다운로드  ---
         QUESTIONS_URL="https://raw.githubusercontent.com/smartcall1/hyperbolic/refs/heads/main/question.txt"
